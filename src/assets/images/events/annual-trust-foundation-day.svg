@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="eventGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8F0"/>
+      <stop offset="100%" stop-color="#FFF3E0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#eventGrad)"/>
+  <rect x="40" y="40" width="720" height="520" rx="20" fill="none" stroke="#E86A17" stroke-width="2" opacity="0.4"/>
+
+  <!-- Celebration Diya / Lamp motif -->
+  <path d="M400 160 C380 200 370 230 400 270 C430 230 420 200 400 160 Z" fill="#E86A17"/>
+  <circle cx="400" cy="220" r="15" fill="#D4AF37"/>
+  <path d="M300 270 C300 340 500 340 500 270 Z" fill="#800020"/>
+
+  <text x="400" y="450" text-anchor="middle" font-family="'Playfair Display', serif" font-weight="bold" font-size="28" fill="#800020">Annual Trust Foundation Day &amp; Seva Samman</text>
+  <text x="400" y="485" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="16" fill="#2C1E16" opacity="0.8">Honoring Community Champions &amp; Volunteers</text>
+</svg>

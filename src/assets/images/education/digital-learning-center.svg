@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="eduGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF4EC"/>
+      <stop offset="100%" stop-color="#FFE0C2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#eduGrad2)"/>
+  <rect x="40" y="40" width="720" height="520" rx="20" fill="none" stroke="#800020" stroke-width="2" opacity="0.3"/>
+
+  <!-- Open Book & Blackboard Graphic -->
+  <rect x="250" y="160" width="300" height="180" rx="12" fill="#800020"/>
+  <rect x="265" y="175" width="270" height="150" rx="6" fill="#1E3A2B"/>
+  <path d="M300 230 H500 M300 260 H450 M300 290 H480" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+
+  <text x="400" y="440" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-weight="bold" font-size="28" fill="#E86A17">संध्याकालीन नि:शुल्क शिक्षण केंद्र</text>
+  <text x="400" y="480" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="16" fill="#2C1E16" opacity="0.8">ग्रामीण छात्र-छात्राओं हेतु ट्यूशन एवं मार्गदर्शन</text>
+</svg>

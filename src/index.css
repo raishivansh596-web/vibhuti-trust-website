@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-saffron: #E86A17;
+    --color-saffron-dark: #D05A0E;
+    --color-maroon: #800020;
+    --color-terracotta: #9B1B30;
+    --color-cream: #FFF8F0;
+    --color-cream-card: #FAF4EC;
+    --color-gold: #D4AF37;
+  }
+
+  body {
+    font-family: 'Poppins', 'Noto Serif Devanagari', sans-serif;
+    background-color: #FFF8F0;
+    color: #2C1E16;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: 'Noto Serif Devanagari', 'Playfair Display', serif;
+  }
+}
+
+/* Custom Traditional Motif Helpers & Utilities */
+.mandala-bg {
+  background-color: #FFF8F0;
+  background-image: radial-gradient(#E86A17 0.5px, transparent 0.5px), radial-gradient(#800020 0.5px, #FFF8F0 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #E86A17 0%, #D4AF37 50%, #800020 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.maroon-gradient {
+  background: linear-gradient(135deg, #800020 0%, #9B1B30 100%);
+}
+
+.saffron-gradient {
+  background: linear-gradient(135deg, #E86A17 0%, #F58220 100%);
+}
+
+/* Soft Warm Shadow Card */
+.warm-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(232, 106, 23, 0.12);
+  box-shadow: 0 10px 30px -5px rgba(128, 0, 32, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.warm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(232, 106, 23, 0.15);
+  border-color: rgba(232, 106, 23, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #E86A17;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #800020;
+}
