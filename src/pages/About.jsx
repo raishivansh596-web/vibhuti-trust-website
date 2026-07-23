@@ -51,10 +51,12 @@ export default function About({ setActivePage }) {
 
           <div className="md:col-span-5">
             <div className="warm-card rounded-3xl p-6 sm:p-8 text-center border-2 border-[#D4AF37]/40 relative">
-              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-[#E86A17] to-[#800020] p-1 shadow-lg mb-4">
-                <div className="w-full h-full bg-[#FFF8F0] rounded-full flex items-center justify-center border-2 border-[#D4AF37]">
-                  <span className="font-serif font-bold text-3xl text-[#800020]">वी.एन.</span>
-                </div>
+              <div className="w-32 h-32 mx-auto rounded-full bg-white p-2 shadow-lg mb-4 border-2 border-[#D4AF37]/60 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/logo.png" 
+                  alt="विभूति नारायण मेमोरियल ट्रस्ट लोगो" 
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
               <h3 className="font-serif font-bold text-xl text-[#800020]">दिवंगत श्री विभूति नारायण</h3>
               <p className="text-xs text-[#E86A17] font-medium mt-1">प्रेरणा स्रोत एवं नामधारक</p>

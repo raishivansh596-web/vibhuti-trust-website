@@ -36,8 +36,12 @@ export default function Footer({ setActivePage }) {
           {/* Column 1: Trust Summary */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-[#E86A17] flex items-center justify-center text-white font-serif font-bold text-lg border border-[#D4AF37]">
-                वी.एन.
+              <div className="w-11 h-11 rounded-full bg-white p-1 shadow-md border border-[#D4AF37]/70 flex items-center justify-center overflow-hidden flex-shrink-0">
+                <img 
+                  src="/logo.png" 
+                  alt="विभूति नारायण मेमोरियल ट्रस्ट लोगो" 
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
               <span className="font-serif font-bold text-lg text-white">
                 {TRUST_CONFIG.name}

@@ -55,11 +55,13 @@ export default function Header({ activePage, setActivePage }) {
             className="flex items-center space-x-3 text-left focus:outline-none group"
             aria-label="विभूति नारायण मेमोरियल ट्रस्ट मुख्य पृष्ठ"
           >
-            {/* Traditional Emblem Logo */}
-            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#E86A17] to-[#800020] p-[2px] shadow-md group-hover:scale-105 transition-transform">
-              <div className="w-full h-full bg-[#FFF8F0] rounded-full flex items-center justify-center border border-[#D4AF37]">
-                <span className="font-serif font-bold text-lg text-[#800020]">वी.एन.</span>
-              </div>
+            {/* Official Trust Logo */}
+            <div className="h-12 w-12 sm:h-13 sm:w-13 rounded-full bg-white p-1 shadow-md border border-[#D4AF37]/60 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden">
+              <img 
+                src="/logo.png" 
+                alt="विभूति नारायण मेमोरियल ट्रस्ट लोगो" 
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
             <div>
               <span className="block font-serif font-bold text-lg sm:text-xl text-[#800020] tracking-tight group-hover:text-[#E86A17] transition-colors">
