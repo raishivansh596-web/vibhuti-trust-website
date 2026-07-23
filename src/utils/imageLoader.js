@@ -31,7 +31,51 @@ const categoryLabels = {
 };
 
 /**
- * Parses all dynamically discovered image files into a structured object grouped by category.
+ * Reads user-uploaded custom images stored in browser localStorage.
+ */
+export const getCustomUploadedImages = () => {
+  try {
+    const data = localStorage.getItem('vnmt_uploaded_photos');
+    return data ? JSON.parse(data) : [];
+  } catch (e) {
+    console.error('Error reading custom photos from localStorage', e);
+    return [];
+  }
+};
+
+/**
+ * Saves a new uploaded image to browser localStorage.
+ */
+export const saveUploadedImage = (newImageObj) => {
+  try {
+    const existing = getCustomUploadedImages();
+    const updated = [newImageObj, ...existing];
+    localStorage.setItem('vnmt_uploaded_photos', JSON.stringify(updated));
+    return updated;
+  } catch (e) {
+    console.error('Error saving photo to localStorage', e);
+    throw e;
+  }
+};
+
+/**
+ * Deletes a custom uploaded image from localStorage by ID.
+ */
+export const deleteUploadedImage = (imageId) => {
+  try {
+    const existing = getCustomUploadedImages();
+    const updated = existing.filter(img => img.id !== imageId);
+    localStorage.setItem('vnmt_uploaded_photos', JSON.stringify(updated));
+    return updated;
+  } catch (e) {
+    console.error('Error deleting photo from localStorage', e);
+    return [];
+  }
+};
+
+/**
+ * Parses all dynamically discovered image files into a structured object grouped by category,
+ * combining built-in static photos with user-uploaded custom photos.
  */
 export const getLocalImages = () => {
   const imagesByCategory = {
@@ -44,16 +88,29 @@ export const getLocalImages = () => {
 
   const allImages = [];
 
+  // First, add custom uploaded images (so they appear at the very top!)
+  const customImages = getCustomUploadedImages();
+  customImages.forEach((img) => {
+    const category = img.category || 'events';
+    const formattedImg = {
+      ...img,
+      categoryHindi: categoryLabels[category] || category,
+      isCustom: true
+    };
+    if (imagesByCategory[category]) {
+      imagesByCategory[category].push(formattedImg);
+    }
+    allImages.push(formattedImg);
+  });
+
+  // Second, add static repository images
   Object.keys(modules).forEach((path) => {
-    // Extract category folder name from path: /src/assets/images/{category}/{filename}
     const pathParts = path.split('/');
     const category = pathParts[pathParts.length - 2]?.toLowerCase();
     const filename = pathParts[pathParts.length - 1];
 
-    // Lookup metadata for Hindi title and caption
     const metadata = GALLERY_METADATA[filename] || {};
 
-    // Format clean readable title from filename as fallback
     const fallbackTitle = filename
       .replace(/\.[^/.]+$/, "")
       .replace(/[-_]/g, " ")
@@ -66,7 +123,8 @@ export const getLocalImages = () => {
       categoryHindi: categoryLabels[category] || category,
       title: metadata.title || fallbackTitle,
       caption: metadata.caption || "",
-      filename: filename
+      filename: filename,
+      isCustom: false
     };
 
     if (imagesByCategory[category]) {
@@ -87,6 +145,5 @@ export const getLocalImages = () => {
 export const getFeaturedImages = (count = 4) => {
   const { all } = getLocalImages();
   if (all.length === 0) return [];
-  // Return first 'count' images or evenly distributed
   return all.slice(0, count);
 };
